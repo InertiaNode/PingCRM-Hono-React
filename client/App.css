@@ -1,0 +1,201 @@
+@import "tailwindcss";
+
+@source '../../Views/';
+
+/* Button Base Styles */
+.btn {
+  @apply inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-md border transition-colors duration-200;
+  @apply focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.btn-sm {
+  @apply px-3 py-1.5 text-xs;
+}
+
+.btn-lg {
+  @apply px-6 py-3 text-base;
+}
+
+/* Primary Button */
+.btn-indigo {
+  @apply inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-md border transition-colors duration-200;
+  @apply bg-indigo-600 border-indigo-600 text-white hover:bg-indigo-700 hover:border-indigo-700;
+  @apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+/* Secondary Button */
+.btn-gray {
+  @apply inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-md border transition-colors duration-200;
+  @apply bg-white border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400;
+  @apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+/* Success Button */
+.btn-green {
+  @apply inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-md border transition-colors duration-200;
+  @apply bg-green-600 border-green-600 text-white hover:bg-green-700 hover:border-green-700;
+  @apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+/* Danger Button */
+.btn-red {
+  @apply inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-md border transition-colors duration-200;
+  @apply bg-red-600 border-red-600 text-white hover:bg-red-700 hover:border-red-700;
+  @apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+/* Warning Button */
+.btn-yellow {
+  @apply inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-md border transition-colors duration-200;
+  @apply bg-yellow-600 border-yellow-600 text-white hover:bg-yellow-700 hover:border-yellow-700;
+  @apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+/* Outline Variants */
+.btn-outline-indigo {
+  @apply inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-md border transition-colors duration-200;
+  @apply bg-transparent border-indigo-600 text-indigo-600 hover:bg-indigo-50;
+  @apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.btn-outline-gray {
+  @apply inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-md border transition-colors duration-200;
+  @apply bg-transparent border-gray-300 text-gray-700 hover:bg-gray-50;
+  @apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+/* Ghost/Text Button */
+.btn-ghost {
+  @apply inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-md border transition-colors duration-200;
+  @apply bg-transparent border-transparent text-gray-600 hover:bg-gray-100;
+  @apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+/* Link Button */
+.btn-link {
+  @apply inline-flex items-center text-sm font-medium text-indigo-600 hover:text-indigo-500 underline-offset-2 hover:underline;
+  @apply focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2;
+}
+
+/* Form Controls */
+.form-input {
+  @apply block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400;
+  @apply focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 transition-colors duration-200;
+}
+
+.form-input[aria-invalid="true"] {
+  @apply border-red-300 focus:border-red-500 focus:ring-red-500;
+}
+
+.form-select {
+  @apply block w-full px-3 py-2 pr-10 border border-gray-300 rounded-md shadow-sm bg-white placeholder-gray-400;
+  @apply focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 transition-colors duration-200;
+}
+
+.form-textarea {
+  @apply block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 resize-y;
+  @apply focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 transition-colors duration-200;
+}
+
+.form-checkbox {
+  @apply h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500 focus:ring-offset-0;
+}
+
+.form-radio {
+  @apply h-4 w-4 text-indigo-600 border-gray-300 focus:ring-indigo-500 focus:ring-offset-0;
+}
+
+/* Loading Spinner */
+.btn-spinner {
+  @apply inline-block h-4 w-4 border-2 border-current border-t-transparent rounded-full animate-spin opacity-75;
+}
+
+/* Form Group */
+.form-group {
+  @apply space-y-1;
+}
+
+.form-label {
+  @apply block text-sm font-medium text-gray-700;
+}
+
+.form-error {
+  @apply text-sm text-red-600;
+}
+
+.form-help {
+  @apply text-sm text-gray-500;
+}
+
+/* Card */
+.card {
+  @apply bg-white shadow-sm rounded-lg border border-gray-200;
+}
+
+.card-header {
+  @apply px-6 py-4 border-b border-gray-200;
+}
+
+.card-body {
+  @apply px-6 py-4;
+}
+
+.card-footer {
+  @apply px-6 py-4 border-t border-gray-200 bg-gray-50;
+}
+
+/* Table */
+.table {
+  @apply min-w-full divide-y divide-gray-200;
+}
+
+.table th {
+  @apply px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-gray-50;
+}
+
+.table td {
+  @apply px-6 py-4 whitespace-nowrap text-sm text-gray-900;
+}
+
+.table tbody tr:hover {
+  @apply bg-gray-50;
+}
+
+/* Badge */
+.badge {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+}
+
+.badge-gray {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800;
+}
+
+.badge-green {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800;
+}
+
+.badge-red {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800;
+}
+
+.badge-yellow {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800;
+}
+
+.badge-indigo {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800;
+}
+
+/* Background Pattern */
+.bg-pattern {
+  background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Ccircle cx="30" cy="30" r="2"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+}
+
+/* Animation Delays */
+.animation-delay-1000 {
+  animation-delay: 1s;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
