@@ -1,10 +1,18 @@
 {
-  "include": ["./**/*"],
-  "exclude": ["node_modules"],
+  "include": [
+    "./**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
-    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "lib": [
+      "ESNext",
+      "DOM",
+      "DOM.Iterable"
+    ],
     "noEmit": true,
     "moduleResolution": "bundler",
     "jsx": "react-jsx",
@@ -16,9 +24,17 @@
     "isolatedModules": true,
     "allowSyntheticDefaultImports": true,
     "paths": {
-      "@/*": ["./*"],
-      "@shared/*": ["../shared/*"]
+      "@/*": [
+        "./*"
+      ],
+      "@shared/*": [
+        "../shared/*"
+      ]
     },
-    "types": ["vite/client"]
+    "types": [
+      "vite/client",
+      "react",
+      "react-dom"
+    ]
   }
 }
