@@ -1,5 +1,4 @@
 import { Hono } from "hono";
-import { Inertia } from "@inertianode/core";
 
 const reports = new Hono();
 

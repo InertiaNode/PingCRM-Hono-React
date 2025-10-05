@@ -1,5 +1,4 @@
 import { Hono } from "hono";
-import { Inertia } from "@inertianode/core";
 import db from "../db";
 import { DbOrganization, DbContact, FilterOptions } from "../types";
 import {

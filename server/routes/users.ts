@@ -1,5 +1,4 @@
 import { Hono } from "hono";
-import { Inertia } from "@inertianode/core";
 import { hash } from "bcrypt";
 import db from "../db";
 import { DbUser, FilterOptions } from "../types";
