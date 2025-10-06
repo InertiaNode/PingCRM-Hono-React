@@ -20,9 +20,7 @@ organizations.get("/", async (c) => {
   const page = parseInt(url.searchParams.get("page") || "1");
   const perPage = 10;
 
-  const { condition: whereCondition, params: whereParams } = buildWhereClause({
-    trashed,
-  });
+  const { where, params: whereParams } = buildWhereClause({ trashed });
   const { condition: searchCondition, params: searchParams } =
     buildSearchConditions(search, ["name", "city", "phone"]);
 
@@ -30,28 +28,17 @@ organizations.get("/", async (c) => {
   const countQuery = "SELECT COUNT(*) as total FROM organizations";
   const allParams: unknown[] = [];
 
-  if (whereCondition || searchCondition) {
-    const conditions = [whereCondition, searchCondition]
-      .filter(Boolean)
-      .join(" AND ");
+  if (where || searchCondition) {
+    const conditions = [where, searchCondition].filter(Boolean).join(" AND ");
     query += ` WHERE ${conditions}`;
     allParams.push(...whereParams, ...searchParams);
   }
 
-  // Build count query with same conditions
-  let finalCountQuery = countQuery;
-  const countParams: unknown[] = [];
-  if (whereCondition || searchCondition) {
-    const conditions = [whereCondition, searchCondition]
-      .filter(Boolean)
-      .join(" AND ");
-    finalCountQuery += ` WHERE ${conditions}`;
-    countParams.push(...whereParams, ...searchParams);
-  }
-
-  const { total } = db.prepare(finalCountQuery).get(countParams) as {
-    total: number;
-  };
+  const { total } = db
+    .prepare(
+      searchCondition ? countQuery + ` WHERE ${searchCondition}` : countQuery,
+    )
+    .get(searchParams) as { total: number };
 
   query += " ORDER BY name LIMIT ? OFFSET ?";
   allParams.push(perPage, (page - 1) * perPage);
